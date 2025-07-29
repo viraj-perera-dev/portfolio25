@@ -21,7 +21,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${bangers.variable} ${zenDots.variable} ${electrolize.variable} antialiased`}
+        className={`${bangers.variable} ${zenDots.variable} ${electrolize.variable} antialiased bg-black`}
       >
         {children}
       </body>
