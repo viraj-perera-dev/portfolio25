@@ -16,7 +16,7 @@ export default function AnimatedText({ props }) {
     { char: "i", offset: 0.15 },
     { char: "v", offset: 0.1 },
     { char: "e", offset: 0.1 },
-    { char: "-", offset: 0.05 },
+    { char: " ", offset: 0.05 },
     { char: "D", offset: 0 },
     { char: "e", offset: 0 },
     { char: "v", offset: 0 },
