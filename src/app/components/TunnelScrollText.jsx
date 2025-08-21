@@ -5,7 +5,6 @@ import React, { useRef, useEffect, useState } from "react";
 import { Text3D } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import gsap from "gsap";
-import * as THREE from "three";
 
 export default function TunnelScrollText({ 
   visible = false, 
@@ -188,27 +187,6 @@ const Text3DElement = React.forwardRef(({
 function TunnelEnvironment() {
   return (
     <group>
-      {/* Floor grid */}
-      <mesh position={[0, -2, 0]} rotation={[-Math.PI / 2, 0, 0]}>
-        <planeGeometry args={[20, 50]} />
-        <meshBasicMaterial 
-          color="#ffffff"
-          opacity={0.1}
-          transparent
-          wireframe
-        />
-      </mesh>
-      
-      {/* Ceiling grid */}
-      <mesh position={[0, 2, 0]} rotation={[Math.PI / 2, 0, 0]}>
-        <planeGeometry args={[20, 50]} />
-        <meshBasicMaterial 
-          color="#ffffff"
-          opacity={0.05}
-          transparent
-          wireframe
-        />
-      </mesh>
       
       {/* Side walls */}
       <TunnelWalls />
