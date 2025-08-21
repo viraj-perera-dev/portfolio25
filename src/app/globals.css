@@ -1,7 +1,37 @@
 @import "tailwindcss";
 
-body {
-  background-color: #ffffff;
-  color: #333333;
+html {
+  scroll-behavior: smooth;
 }
 
+body {
+  background-color: #000000;
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+}
+
+/* Smooth scrolling for tunnel effect */
+.tunnel-scroll {
+  scroll-behavior: smooth;
+}
+
+/* Hide scrollbar but keep functionality */
+body::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+/* Custom scrollbar for better UX */
+body::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+body::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
