@@ -1,3 +1,4 @@
+// Updated HeroSection.jsx
 "use client";
 
 import React, { useState } from "react";
@@ -5,7 +6,7 @@ import { Canvas } from "@react-three/fiber";
 import PlayMusic from "./PlayMusic";
 import Scene from "./Scene";
 import LoadingComponent from "./LoadingComponent";
-
+import ScrollIndicator from "./ScrollIndicator";
 
 export default function HeroSection() {
   const [showText, setShowText] = useState(false);
@@ -13,6 +14,7 @@ export default function HeroSection() {
   const [launched, setLaunched] = useState(false);
   const [loading, setLoading] = useState(true);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [showTunnelEffect, setShowTunnelEffect] = useState(false);
 
   const handleLaunch = () => {
     setShowSmoke(true);
@@ -22,6 +24,8 @@ export default function HeroSection() {
     }, 1000);
     setTimeout(() => setShowSmoke(false), 3000);
     setTimeout(() => setShowText(true), 4000);
+    // Trigger tunnel effect after rocket animation completes
+    setTimeout(() => setShowTunnelEffect(true), 12000); // Rocket takes ~10s + 2s delay
   };
 
   return (
@@ -37,12 +41,17 @@ export default function HeroSection() {
             showText={showText}
           />
         </Canvas>
+
         <LoadingComponent
           loading={loading}
           launched={launched}
           handleLaunch={handleLaunch}
         />
+
         <PlayMusic isPlaying={isPlaying} setIsPlaying={setIsPlaying} />
+        
+        {/* Scroll indicator for tunnel effect */}
+        <ScrollIndicator showTunnelEffect={showTunnelEffect} />
       </div>
     </>
   );
